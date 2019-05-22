@@ -5,6 +5,13 @@
 
 # sample docker build && docker run command
 # https://cloud.docker.com/u/naruya/repository/docker/naruya/mujoco-mil
+# ```
+# $ docker build ./ -t mujoco-mil
+# $ docker run --runtime=nvidia -it \
+#              -e "DISPLAY" -e "QT_X11_NO_MITSHM=1" -v /tmp/.X11-unix:/tmp/.X11-unix \
+#              -v /home/hsr-dev2/.mujoco:/root/.mujoco -v /home/hsr-dev2/workspace/:/root/share \
+#              -p 8888:8888 --name mil mujoco-mil
+# ```
 
 # References
 # [1] https://gitlab.com/nvidia/cuda/blob/ubuntu16.04/9.0/devel/cudnn7/Dockerfile
