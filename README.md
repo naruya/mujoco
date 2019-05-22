@@ -51,7 +51,7 @@ don't forget
 $ cp -d -r ~/share/data/textures ~/workspace/gym/gym/envs/mujoco/assets/sim_push_xmls
 ```
 
-tecnets
+(Additional) tecnets
 ```
 $ cd workspace
 $ git clone https://git.hsr.io/matsuolab/task_embedded_control_networks.git
