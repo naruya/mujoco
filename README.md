@@ -37,7 +37,7 @@ Run below in host.
 $ xhost local:
 ```
 
-Simple mujoco sample. Run below in a running container.
+(Additional) Simple mujoco sample. Run below in a running container.
 ```
 $ cd workspace
 $ git clone https://github.com/naruya/mujoco.git
