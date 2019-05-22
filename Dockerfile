@@ -54,5 +54,12 @@ RUN source /root/.zshrc && \
 # GUI, [3]
 RUN apt-get install -y libglu1 libglfw3
 
+# additional
+RUN apt-get install -y vim
+
+RUN source /root/.zshrc && \
+    pip install jupyterlab && \
+    echo 'alias jl="jupyter lab --ip 0.0.0.0 --port 8888 --allow-root"' >> /root/.zshrc
+
 WORKDIR /root
 CMD ["zsh"]
