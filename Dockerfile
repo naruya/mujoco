@@ -54,5 +54,5 @@ RUN source /root/.zshrc && \
 # GUI, [3]
 RUN apt-get install -y libglu1 libglfw3
 
-# WORKDIR /root
+WORKDIR /root
 CMD ["zsh"]
