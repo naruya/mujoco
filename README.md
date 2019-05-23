@@ -58,10 +58,8 @@ $ git clone https://git.hsr.io/matsuolab/task_embedded_control_networks.git
 $ cd task_embedded_control_networks
 $ pip install -r requirements.txt
 $ mkdir logs
-$ cd logs
-$ wget https://www.dropbox.com/s/55t0j5b0odf2mbo/ctr_20.732142329216003_2019-05-22T17%3A15%3A58.938877.pt
-$ wget https://www.dropbox.com/s/d8yt1g9ru527hyg/emb_20.732142329216003_2019-05-22T17%3A15%3A58.936195.pt
-$ cd ../
+$ wget https://www.dropbox.com/s/55t0j5b0odf2mbo/ctr_20.732142329216003_2019-05-22T17%3A15%3A58.938877.pt -P ./logs/
+$ wget https://www.dropbox.com/s/d8yt1g9ru527hyg/emb_20.732142329216003_2019-05-22T17%3A15%3A58.936195.pt -P ./logs/
 $ jl &
 # Run meta-test
 ```
