@@ -44,8 +44,8 @@ RUN curl https://pyenv.run | zsh && \
     echo 'eval "$(pyenv virtualenv-init -)"' >> /root/.zshrc
 
 RUN source /root/.zshrc && \
-    pyenv install 3.6.8 && \
-    pyenv global 3.6.8
+    pyenv install 2.7.16 && \
+    pyenv global 2.7.16
 
 # gym+mujoco
 WORKDIR /root/workspace
