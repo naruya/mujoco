@@ -48,9 +48,9 @@ RUN source /root/.zshrc && \
     pyenv global 3.6.8
 
 # gym+mujoco
-WORKDIR /root/workspace
+WORKDIR /root/.workspace
 RUN git clone https://github.com/TMats/gym.git
-WORKDIR /root/workspace/gym
+WORKDIR /root/.workspace/gym
 RUN git checkout mil && \
     source /root/.zshrc && \
     pip install -e '.[mujoco]'
