@@ -49,7 +49,7 @@ RUN source /root/.zshrc && \
 
 # gym+mujoco
 WORKDIR /root/workspace
-RUN git clone https://github.com/tianheyu927/gym.git
+RUN git clone https://github.com/TMats/gym.git
 WORKDIR /root/workspace/gym
 RUN git checkout mil && \
     source /root/.zshrc && \
