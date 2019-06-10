@@ -18,7 +18,9 @@
 # [2] https://github.com/pyenv/pyenv/wiki/Common-build-problems
 # [3] http://wiki.ros.org/docker/Tutorials/Hardware%20Acceleration
 
-# cudagl. [1]
+
+# cudagl. [1] ----------------
+
 FROM nvidia/cudagl:9.0-devel-ubuntu16.04
 ENV CUDNN_VERSION 7.5.0.56
 
@@ -27,7 +29,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
             libcudnn7-dev=$CUDNN_VERSION-1+cuda9.0 && \
     apt-mark hold libcudnn7
 
-# pyenv, zsh. [2]
+# pyenv, zsh. [2] ----------------
+
 RUN apt-get update -y && apt-get -y upgrade && apt-get install -y \
     make build-essential libssl-dev zlib1g-dev libbz2-dev \
     libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev \
@@ -47,23 +50,31 @@ RUN source /root/.zshrc && \
     pyenv install 3.6.8 && \
     pyenv global 3.6.8
 
-# gym+mujoco
+# gym+mujoco ----------------
+
 WORKDIR /root/workspace
-RUN git clone https://github.com/tianheyu927/gym.git
+
+# Use Forked repository
+RUN git clone https://github.com/TMats/gym.git
+# RUN git clone https://github.com/tianheyu927/gym
+
 WORKDIR /root/workspace/gym
+
 RUN git checkout mil && \
+# RUN git checkout mil-improved && \ # <- No rendering ver (TMats/gym/ repo only)
     source /root/.zshrc && \
     pip install -e '.[mujoco]'
 
 RUN source /root/.zshrc && \
     pip install scipy natsort 
 
-# GUI, [3]
+# GUI, [3] ----------------
+
 RUN apt-get install -y libglu1 libglfw3
 
-# additional
-RUN apt-get install -y vim
+# additional ----------------
 
+RUN apt-get install -y vim
 RUN source /root/.zshrc && \
     pip install jupyterlab && \
     echo 'alias jl="jupyter lab --ip 0.0.0.0 --port 8888 --allow-root"' >> /root/.zshrc
